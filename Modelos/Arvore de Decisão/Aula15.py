@@ -9,7 +9,7 @@ data = pd.DataFrame({
     'Classes':['peixe', 'reptil', 'anfibio', 'mamifero']
 })
 
-X = data[['tem_escamas', 'vive_na_agua']]
+X = data[['vive_na_agua', 'tem_escamas']]
 y = data['Classes']
 
 # Criando a arvore
@@ -18,5 +18,5 @@ arvore.fit(X,y)
 
 # Visualizando o mapa
 plt.figure(figsize=(10,6))
-plot_tree(arvore, feature_names= X.columns, class_names=y.unique(), filled=True,)
+plot_tree(arvore, feature_names= X.columns, class_names=y.unique(), filled=True)
 plt.show()
